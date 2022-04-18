@@ -1,0 +1,95 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+
+
+.media-scroller {
+    margin: auto;
+    --_spacer: var(--size-3);
+    display: grid;
+    gap: var(--_spacer);
+    grid-auto-flow: column;
+    grid-auto-columns: 10%;
+
+    padding: 0 var(--_spacer) var(--_spacer);
+
+    width: 80%;
+    /* height: 150px; */
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    
+}
+
+.media-element {
+    /* width: 100px; */
+    /* height: 100px; */
+    display: grid;
+    grid-template-rows: min-content;
+    gap: var(--_spacer);
+    /* padding: var(--_spacer); */
+    /* background: var(--surface-2); */
+    border-radius: 5%;
+    box-shadow: var(--shadow-3);
+}
+
+.title {
+    position: relative;
+    background-color: black;
+    text-align: center;
+    display: none;
+}
+/* 
+.media-element:hover > .title {
+    display: inherit   
+} */
+
+.media-element > img {
+    inline-size: 100%;
+    aspect-ratio: 3/4; 
+    object-fit: cover;
+    border-radius: 1%;
+
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+
+
+/* general styling */
+
+.container {
+  inline-size: min(100% - 4rem, 70rem);
+  margin-inline: auto;
+}
+
+.flow {
+  display: grid;
+  gap: var(--size-3);
+}
+
+.page-header {
+  padding-block: var(--size-9);
+  margin-block-end: var(--size-9);
+  background: var(--gradient-16);
+  color: var(--gray-0);
+  box-shadow: var(--shadow-2);
+}
+
+.page-title {
+  font-size: var(--font-size-fluid-3);
+}
+
+.page-subtitle {
+  font-size: var(--font-size-fluid-1);
+}
+
+.section-title {
+  padding-inline-start: var(--size-6);
+  margin-block: var(--size-9) var(--size-3);
+}
